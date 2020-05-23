@@ -17,6 +17,9 @@ module.exports = function(context) {
 
         } else {
             layers = [{
+                title: 'Mapbox 中国',
+                layer: L.tileLayer('https://api.mapbox.cn/styles/v1/mapbox/streets-zh-v1/tiles/256/{z}/{x}/{y}?access_token=' + L.mapbox.accessTokenCn, {maxZoom: 22, attribution: '&copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a> &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'})
+            }, {
                 title: 'Mapbox',
                 layer: L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {maxZoom: 22, attribution: '&copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a> &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'})
             }, {
@@ -30,9 +33,6 @@ module.exports = function(context) {
             }, {
                 title: '天地图',
                 layer: L.tileLayer('https://t0.tianditu.gov.cn/vec_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILECOL={x}&TILEROW={y}&TILEMATRIX={z}&tk=' + L.mapbox.accessTokenTdt, {maxZoom: 18, attribution: '&copy; 天地图'})
-            }, {
-                title: 'Mapbox 中国',
-                layer: L.tileLayer('https://api.mapbox.cn/v4/mapbox.china-streets-v1/{z}/{x}/{y}.png?access_token=' + L.mapbox.accessTokenCn, {maxZoom: 22, attribution: '&copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a> &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'})
             }
             // OCM tiles from Thunderforest require an API key. Add your key and uncomment the lines
             // below to enable the OCM layer.
