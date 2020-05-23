@@ -27,6 +27,12 @@ module.exports = function(context) {
                 layer: L.tileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
                 })
+            }, {
+                title: '天地图',
+                layer: L.tileLayer('https://t0.tianditu.gov.cn/vec_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILECOL={x}&TILEROW={y}&TILEMATRIX={z}&tk=' + L.mapbox.accessTokenTdt, {maxZoom: 18, attribution: '&copy; 天地图'})
+            }, {
+                title: 'Mapbox 中国',
+                layer: L.tileLayer('https://api.mapbox.cn/v4/mapbox.china-streets-v1/{z}/{x}/{y}.png?access_token=' + L.mapbox.accessTokenCn, {maxZoom: 22, attribution: '&copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a> &copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'})
             }
             // OCM tiles from Thunderforest require an API key. Add your key and uncomment the lines
             // below to enable the OCM layer.

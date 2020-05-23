@@ -1,6 +1,9 @@
 module.exports = function(hostname) {
     // Settings for geojson.io
     L.mapbox.accessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXFhYTA2bTMyeW44ZG0ybXBkMHkifQ.gUGbDOPUN1v1fTs5SeOR4A';
+    L.mapbox.accessTokenCn = 'pk.eyJ1IjoibmF0aGFuODkxMSIsImEiOiJjamh2aWwyZGMwemphM2pwYXdrNnM5YzllIn0.cMSTMVcdiefqYkZ9X6IClA';
+    // 天地图tk
+    L.mapbox.accessTokenTdt = '9a02b3cdd29cd346de4df04229797710';
     if (hostname === 'geojson.io') {
         L.mapbox.config.FORCE_HTTPS = true;
         return {
